@@ -1,4 +1,4 @@
-package com.example.mantani
+package com.mantani.app
 
 import io.flutter.embedding.android.FlutterActivity
 

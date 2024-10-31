@@ -12,7 +12,12 @@
           "package_name": "com.mantani.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "983053251981-v1vjic0i2p3hfrgg5oh4569num5akl1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBYGzZm6e4vkOLDPZol4RjJteGC0_WKk5w"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983053251981-v1vjic0i2p3hfrgg5oh4569num5akl1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

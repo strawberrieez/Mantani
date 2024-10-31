@@ -7,4 +7,5 @@ class Routes {
   static const sampleSatu = '/sample_satu';
   static const sampleDua = '/sample_dua';
   static const sampleTiga = '/sample_tiga';
+  static const splashScreen = '/splash_screen';
 }
