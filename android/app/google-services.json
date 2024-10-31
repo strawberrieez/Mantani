@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "983053251981",
+    "project_id": "mantani-77f1c",
+    "storage_bucket": "mantani-77f1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983053251981:android:31237e30e114573d51f9c4",
+        "android_client_info": {
+          "package_name": "com.mantani.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYGzZm6e4vkOLDPZol4RjJteGC0_WKk5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
