@@ -48,10 +48,10 @@ class LandingPageView extends StatelessWidget {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: 250,
+                      height: 200,
                       decoration: ShapeDecoration(
                         image: DecorationImage(
-                          image: NetworkImage("https://via.placeholder.com/302x250"),
+                          image: NetworkImage("assets/images/landing_page3.png"),
                           fit: BoxFit.fill,
                         ),
                         shape: RoundedRectangleBorder(
