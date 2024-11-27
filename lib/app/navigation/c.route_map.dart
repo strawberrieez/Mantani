@@ -8,7 +8,6 @@ class RouteMap {
     Routes.sampleDua: (RouteData data) => const SampleDuaView(),
     Routes.sampleTiga: (RouteData data) => const SampleTigaView(),
     Routes.splashScreen: (RouteData data) => const SplashScreenView(),
-    Routes.landingPage: (RouteData data) => const LandingPageView(),
     Routes.loginPage: (RouteData data) => const LoginPageView(),
     Routes.registerPage: (RouteData data) => const RegisterPageView(),
     Routes.homePage: (RouteData data) => const HomePageView(),
@@ -19,5 +18,8 @@ class RouteMap {
     Routes.penghasilanPage: (RouteData data) => const PenghasilanPageView(),
     Routes.gajiKaryawanPage: (RouteData data) => const GajiKaryawanPageView(),
     Routes.historyPanenPage: (RouteData data) => const HistoryPanenPageView(),
+Routes.landingPage1: (RouteData data) => const LandingPage1View(),
+Routes.landingPage2: (RouteData data) => const LandingPage2View(),
+Routes.landingPage3: (RouteData data) => const LandingPage3View(),
   };
 }

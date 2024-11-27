@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class LandingPageFab extends StatelessWidget {
-  const LandingPageFab({super.key});
+class LandingPage1Fab extends StatelessWidget {
+  const LandingPage1Fab({super.key});
 
   @override
   Widget build(BuildContext context) {

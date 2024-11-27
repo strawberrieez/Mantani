@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class LandingPageDelta extends StatelessWidget {
-  const LandingPageDelta({super.key});
+class LandingPage1Echo extends StatelessWidget {
+  const LandingPage1Echo({super.key});
 
   @override
   Widget build(BuildContext context) {

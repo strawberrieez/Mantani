@@ -4,7 +4,6 @@ abstract class Ctrl {
   static SampleSatuCtrl get sampleSatu => SampleSatuCtrl();
   static SampleDuaCtrl get sampleDua => SampleDuaCtrl();
   static SampleTigaCtrl get sampleTiga => SampleTigaCtrl();
-  static LandingPageCtrl get landingPage => LandingPageCtrl();
   static LoginPageCtrl get loginPage => LoginPageCtrl();
   static RegisterPageCtrl get registerPage => RegisterPageCtrl();
   static HomePageCtrl get homePage => HomePageCtrl();
@@ -15,4 +14,7 @@ abstract class Ctrl {
   static PenghasilanPageCtrl get penghasilanPage => PenghasilanPageCtrl();
   static GajiKaryawanPageCtrl get gajiKaryawanPage => GajiKaryawanPageCtrl();
   static HistoryPanenPageCtrl get historyPanenPage => HistoryPanenPageCtrl();
+  static LandingPage1Ctrl get landingPage1 => LandingPage1Ctrl();
+  static LandingPage2Ctrl get landingPage2 => LandingPage2Ctrl();
+  static LandingPage3Ctrl get landingPage3 => LandingPage3Ctrl();
 }

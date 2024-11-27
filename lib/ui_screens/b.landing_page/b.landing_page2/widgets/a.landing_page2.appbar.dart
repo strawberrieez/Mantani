@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class LandingPageAppbar extends StatelessWidget {
-  const LandingPageAppbar({super.key});
+class LandingPage2Appbar extends StatelessWidget {
+  const LandingPage2Appbar({super.key});
 
   @override
   Widget build(BuildContext context) {

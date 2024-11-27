@@ -1,7 +1,7 @@
 part of '_index.dart';
 
-class LandingPageCtrl {
-  init() => logxx.i(LandingPageCtrl, '...');
+class LandingPage1Ctrl {
+  init() => logxx.i(LandingPage1Ctrl, '...');
 
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 
