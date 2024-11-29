@@ -14,11 +14,13 @@ class Routes {
   static const editProfilePage = '/edit_profile_page';
   static const bantuanPage = '/bantuan_page';
   static const tentangPage = '/tentang_page';
-  static const kelolaPage = '/kelola_page';
-  static const penghasilanPage = '/penghasilan_page';
-  static const gajiKaryawanPage = '/gaji_karyawan_page';
   static const historyPanenPage = '/history_panen_page';
   static const landingPage1 = '/landing_page1';
   static const landingPage2 = '/landing_page2';
   static const landingPage3 = '/landing_page3';
+  static const kelolaPageList = '/kelola_page_list';
+  static const kelolaPageDetail = '/kelola_page_detail';
+  static const penghasilanPage = '/penghasilan_page';
+  static const gajiKaryawanList = '/gaji_karyawan_list';
+  static const gajiKaryawanDetail = '/gaji_karyawan_detail';
 }

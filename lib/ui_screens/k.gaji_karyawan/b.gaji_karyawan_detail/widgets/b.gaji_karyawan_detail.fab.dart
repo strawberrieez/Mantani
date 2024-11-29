@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class GajiKaryawanPageFab extends StatelessWidget {
-  const GajiKaryawanPageFab({super.key});
+class GajiKaryawanDetailFab extends StatelessWidget {
+  const GajiKaryawanDetailFab({super.key});
 
   @override
   Widget build(BuildContext context) {

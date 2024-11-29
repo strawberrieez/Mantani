@@ -1,6 +1,6 @@
 part of '_index.dart';
 
 final nav = NavigationBuilder.create(
-  initialLocation: Routes.splashScreen,
+  initialLocation: Routes.loginPage,
   routes: RouteMap.data,
 );

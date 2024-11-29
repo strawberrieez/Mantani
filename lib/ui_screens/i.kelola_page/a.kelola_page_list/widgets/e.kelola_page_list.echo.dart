@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class KelolaPageEcho extends StatelessWidget {
-  const KelolaPageEcho({super.key});
+class KelolaPageListEcho extends StatelessWidget {
+  const KelolaPageListEcho({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 part of '_index.dart';
 
-class GajiKaryawanPageCtrl {
-  init() => logxx.i(GajiKaryawanPageCtrl, '...');
+class KelolaPageListCtrl {
+  init() => logxx.i(KelolaPageListCtrl, '...');
 
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 

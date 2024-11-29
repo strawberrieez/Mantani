@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class GajiKaryawanPageAppbar extends StatelessWidget {
-  const GajiKaryawanPageAppbar({super.key});
+class KelolaPageDetailAppbar extends StatelessWidget {
+  const KelolaPageDetailAppbar({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 part of '_index.dart';
 
-class KelolaPageData {
-  final rxTitle = 'Kelola Page'.inj();
+class GajiKaryawanListData {
+  final rxTitle = 'Gaji Karyawan List'.inj();
 
   final rxCounter = 0.inj();
 

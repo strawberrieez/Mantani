@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class GajiKaryawanPageDelta extends StatelessWidget {
-  const GajiKaryawanPageDelta({super.key});
+class GajiKaryawanListDelta extends StatelessWidget {
+  const GajiKaryawanListDelta({super.key});
 
   @override
   Widget build(BuildContext context) {

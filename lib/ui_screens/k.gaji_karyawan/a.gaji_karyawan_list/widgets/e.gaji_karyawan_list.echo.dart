@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class GajiKaryawanPageEcho extends StatelessWidget {
-  const GajiKaryawanPageEcho({super.key});
+class GajiKaryawanListEcho extends StatelessWidget {
+  const GajiKaryawanListEcho({super.key});
 
   @override
   Widget build(BuildContext context) {

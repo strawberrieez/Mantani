@@ -10,11 +10,13 @@ abstract class Ctrl {
   static EditProfilePageCtrl get editProfilePage => EditProfilePageCtrl();
   static BantuanPageCtrl get bantuanPage => BantuanPageCtrl();
   static TentangPageCtrl get tentangPage => TentangPageCtrl();
-  static KelolaPageCtrl get kelolaPage => KelolaPageCtrl();
-  static PenghasilanPageCtrl get penghasilanPage => PenghasilanPageCtrl();
-  static GajiKaryawanPageCtrl get gajiKaryawanPage => GajiKaryawanPageCtrl();
   static HistoryPanenPageCtrl get historyPanenPage => HistoryPanenPageCtrl();
   static LandingPage1Ctrl get landingPage1 => LandingPage1Ctrl();
   static LandingPage2Ctrl get landingPage2 => LandingPage2Ctrl();
   static LandingPage3Ctrl get landingPage3 => LandingPage3Ctrl();
+  static KelolaPageListCtrl get kelolaPageList => KelolaPageListCtrl();
+  static KelolaPageDetailCtrl get kelolaPageDetail => KelolaPageDetailCtrl();
+  static PenghasilanPageCtrl get penghasilanPage => PenghasilanPageCtrl();
+  static GajiKaryawanListCtrl get gajiKaryawanList => GajiKaryawanListCtrl();
+  static GajiKaryawanDetailCtrl get gajiKaryawanDetail => GajiKaryawanDetailCtrl();
 }

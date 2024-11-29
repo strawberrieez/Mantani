@@ -5,360 +5,166 @@ class PenghasilanPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 393,
-          height: 852,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Color(0xFFE7F0DC)),
-          child: Stack(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: IncomePage(),
+    );
+  }
+}
+
+class IncomePage extends StatefulWidget {
+  @override
+  _IncomePageState createState() => _IncomePageState();
+}
+
+class _IncomePageState extends State<IncomePage> {
+  double totalPanen = 0; // Input dari history panen
+  double totalGajiKaryawan = 0; // Input dari gaji karyawan
+  int _currentIndex = 0; // Indeks untuk navigasi bawah
+
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+
+    // Navigasi sesuai index
+    switch (index) {
+      case 0:
+        // Navigasi ke halaman utama
+        break;
+      case 1:
+        // Navigasi ke halaman kelola
+        break;
+      case 2:
+        // Navigasi ke halaman penghasilan (halaman saat ini)
+        break;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    double totalPenghasilanKotor = totalPanen;
+    double totalPenghasilanBersih = totalPanen - totalGajiKaryawan;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'ManTani',
+          style: TextStyle(
+            color: Colors.white, // Warna teks putih
+          ),
+        ),
+        backgroundColor: Color(0xFF597445),
+        foregroundColor: Colors.white, // Ikon juga berwarna putih
+        actions: [
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: Container(
+        color: Color.fromRGBO(231, 240, 220, 1),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Positioned(
-                left: 21,
-                top: 45,
-                child: Text(
-                  'ManTani',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFFE7F0DC),
-                    fontSize: 20,
-                    fontFamily: 'Nunito',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 0,
-                top: 772,
+              Card(
+                color: Color(0xFF597445),
                 child: Container(
-                  width: 393,
-                  height: 80,
-                  decoration: BoxDecoration(color: Color(0xFF597445)),
-                ),
-              ),
-              Positioned(
-                left: 0,
-                top: 772,
-                child: Container(
-                  width: 393,
-                  height: 80,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 50,
-                        padding: const EdgeInsets.all(5),
-                        decoration: ShapeDecoration(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const SizedBox(height: 5),
-                            SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                'Utama',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color(0xFFE7F0DC),
-                                  fontSize: 10,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 90),
-                      Container(
-                        width: 30,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const SizedBox(height: 5),
-                            SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                'Kelola',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color(0xFFE7F0DC),
-                                  fontSize: 10,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 90),
-                      Container(
-                        width: 57,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              padding: const EdgeInsets.all(10),
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF729762),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                ],
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                'Penghasilan',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color(0xFFE7F0DC),
-                                  fontSize: 10,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
-                  width: 393,
-                  height: 90,
-                  padding: const EdgeInsets.symmetric(vertical: 18),
-                  decoration: BoxDecoration(color: Color(0xFF597445)),
+                  width: double.infinity, // Agar card penuh ke kanan
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        width: 393,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              'ManTani',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color(0xFFE7F0DC),
-                                fontSize: 20,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w700,
-                                height: 0,
-                              ),
-                            ),
-                            const SizedBox(width: 268),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 21,
-                top: 108,
-                child: Container(
-                  height: 133,
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  decoration: ShapeDecoration(
-                    color: Color(0xFF597445),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        height: 49,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                'Total Penghasilan Kotor',
-                                style: TextStyle(
-                                  color: Color(0xFFE7F0DC),
-                                  fontSize: 16,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                'Rp. 152.948.830',
-                                style: TextStyle(
-                                  color: Color(0xFFFF0000),
-                                  fontSize: 16,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 15),
-                      Container(
-                        width: double.infinity,
-                        height: 49,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                'Total Penghasilan Bersih',
-                                style: TextStyle(
-                                  color: Color(0xFFE7F0DC),
-                                  fontSize: 16,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                'Rp. 110.746.900',
-                                style: TextStyle(
-                                  color: Color(0xFF00CC14),
-                                  fontSize: 16,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 21,
-                top: 259,
-                child: Container(
-                  width: 352,
-                  padding: const EdgeInsets.all(10),
-                  decoration: ShapeDecoration(
-                    color: Color(0xFF597445),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
                       Text(
-                        'Gaji Karyawan',
+                        'Total Penghasilan Kotor',
                         style: TextStyle(
-                          color: Color(0xFFE7F0DC),
                           fontSize: 16,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        'Rp. ${totalPenghasilanKotor.toStringAsFixed(0)}',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.red.shade400,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Total Penghasilan Bersih',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        'Rp. ${totalPenghasilanBersih.toStringAsFixed(0)}',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.greenAccent.shade100,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-              Positioned(
-                left: 21,
-                top: 319,
-                child: Container(
-                  width: 352,
-                  padding: const EdgeInsets.all(10),
-                  decoration: ShapeDecoration(
-                    color: Color(0xFF597445),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'History panen',
-                        style: TextStyle(
-                          color: Color(0xFFE7F0DC),
-                          fontSize: 16,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ],
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigasi ke input gaji karyawan
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF597445),
+                  foregroundColor: Colors.white, // Teks tombol warna putih
+                  minimumSize: Size(double.infinity, 50), // Lebar penuh dan tinggi 50
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0), // Border sedikit melengkung
                   ),
                 ),
+                child: Text('Gaji Karyawan'),
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigasi ke history panen
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF597445),
+                  foregroundColor: Colors.white, // Teks tombol warna putih
+                  minimumSize: Size(double.infinity, 50), // Lebar penuh dan tinggi 50
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0), // Border sedikit melengkung
+                  ),
+                ),
+                child: Text('Histori Panen'),
               ),
             ],
           ),
         ),
-      ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt),
+            label: 'Kelola',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.attach_money),
+            label: 'Penghasilan',
+          ),
+        ],
+        currentIndex: _currentIndex,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+        onTap: _onTabTapped,
+      ),
     );
   }
 }

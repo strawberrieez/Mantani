@@ -1,0 +1,9 @@
+part of '_index.dart';
+
+class GajiKaryawanListCtrl {
+  init() => logxx.i(GajiKaryawanListCtrl, '...');
+
+  increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
+
+  updateRandom() => Serv.sample.updateRandom();
+}
