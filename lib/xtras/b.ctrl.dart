@@ -19,4 +19,5 @@ abstract class Ctrl {
   static PenghasilanPageCtrl get penghasilanPage => PenghasilanPageCtrl();
   static GajiKaryawanListCtrl get gajiKaryawanList => GajiKaryawanListCtrl();
   static GajiKaryawanDetailCtrl get gajiKaryawanDetail => GajiKaryawanDetailCtrl();
+  static DrawerCtrl get drawer => DrawerCtrl();
 }

@@ -108,7 +108,9 @@ class LandingPage2View extends StatelessWidget {
                       width: double.infinity,
                       height: 45,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          nav.to(Routes.loginPage);
+                        },
                         child: const Text(
                           "Lewati",
                           style: TextStyle(

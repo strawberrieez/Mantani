@@ -1,6 +1,6 @@
 part of '_index.dart';
 
 final nav = NavigationBuilder.create(
-  initialLocation: Routes.loginPage,
+  initialLocation: Routes.gajiKaryawanList,
   routes: RouteMap.data,
 );

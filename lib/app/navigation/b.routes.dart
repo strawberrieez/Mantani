@@ -23,4 +23,5 @@ class Routes {
   static const penghasilanPage = '/penghasilan_page';
   static const gajiKaryawanList = '/gaji_karyawan_list';
   static const gajiKaryawanDetail = '/gaji_karyawan_detail';
+  static const drawer = '/drawer';
 }

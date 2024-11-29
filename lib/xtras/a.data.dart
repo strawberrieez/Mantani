@@ -19,6 +19,7 @@ abstract class Data {
   static Injected<PenghasilanPageData> get penghasilanPage => _penghasilanPageData;
   static Injected<GajiKaryawanListData> get gajiKaryawanList => _gajiKaryawanListData;
   static Injected<GajiKaryawanDetailData> get gajiKaryawanDetail => _gajiKaryawanDetailData;
+  static Injected<DrawerData> get drawer => _drawerData;
 }
 
 final _sampleSatuData = RM1.inj(SampleSatuData(), Ctrl.sampleSatu.init);
@@ -42,3 +43,5 @@ final _kelolaPageDetailData = RM1.inj(KelolaPageDetailData(), Ctrl.kelolaPageDet
 final _penghasilanPageData = RM1.inj(PenghasilanPageData(), Ctrl.penghasilanPage.init);
 final _gajiKaryawanListData = RM1.inj(GajiKaryawanListData(), Ctrl.gajiKaryawanList.init);
 final _gajiKaryawanDetailData = RM1.inj(GajiKaryawanDetailData(), Ctrl.gajiKaryawanDetail.init);
+
+final _drawerData = RM1.inj(DrawerData(), Ctrl.drawer.init);

@@ -19,9 +19,10 @@ class RouteMap {
     Routes.landingPage2: (RouteData data) => const LandingPage2View(),
     Routes.landingPage3: (RouteData data) => const LandingPage3View(),
     Routes.kelolaPageList: (RouteData data) => const KelolaPageListView(),
-    Routes.kelolaPageDetail: (RouteData data) => const KelolaPageDetailView(),
+    Routes.kelolaPageDetail: (RouteData data) => KelolaPageDetailView(),
     Routes.penghasilanPage: (RouteData data) => const PenghasilanPageView(),
     Routes.gajiKaryawanList: (RouteData data) => const GajiKaryawanListView(),
     Routes.gajiKaryawanDetail: (RouteData data) => const GajiKaryawanDetailView(),
+    Routes.drawer: (RouteData data) => const DrawerView(),
   };
 }

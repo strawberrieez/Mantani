@@ -10,91 +10,113 @@ class RegisterPageView extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Logo
-                Image.asset(
-                  'assets/images/logo.png',
-                  height: 150,
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    height: 150,
+                  ),
                 ),
-                const SizedBox(height: 20),
-                const SizedBox(height: 40),
+                const SizedBox(height: 50),
                 // Judul Halaman
-                Text(
-                  'Register',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  'Silahkan buat akun',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black54,
-                  ),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, // Diubah ke start
+                  children: [
+                    Text(
+                      'Register',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Silahkan buat akun',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 40),
-                // Form Input
+
+                // TextField untuk email
                 _buildTextField(
-                  hintText: 'Masukkan email',
+                  labelText: 'Masukkan email',
                   icon: Icons.email_outlined,
                 ),
                 const SizedBox(height: 20),
+                // TextField untuk password
                 _buildTextField(
-                  hintText: 'Masukkan password',
+                  labelText: 'Masukkan password',
                   icon: Icons.lock_outline,
                   obscureText: true,
                 ),
                 const SizedBox(height: 20),
                 _buildTextField(
-                  hintText: 'Konfirmasi password',
+                  labelText: 'Konfirmasi password',
                   icon: Icons.lock_outline,
                   obscureText: true,
                 ),
-                const SizedBox(height: 40),
-                // Tombol Daftar
-                ElevatedButton(
-                  onPressed: () {
-                    // Tambahkan logika register di sini
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF597445), // Warna hijau
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
+
+                const SizedBox(height: 70),
+                // Tombol Login
+                SizedBox(
+                  width: double.infinity,
+                  height: 45,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Aksi tombol login
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF597445), // Warna hijau sesuai desain
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                     ),
-                    minimumSize: const Size(double.infinity, 50),
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                  ),
-                  child: const Text(
-                    'Daftar',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    child: const Text(
+                      "Daftar",
+                      style: TextStyle(
+                        color: Color(0xFFE7F0DC),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-                // Sudah punya akun
-                RichText(
-                  text: TextSpan(
-                    text: 'Sudah punya akun? ',
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.black54,
-                    ),
+                const SizedBox(height: 10),
+                // Sudah punya akun?
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center, // Menyelaraskan isi Row ke tengah
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      TextSpan(
-                        text: 'Masuk',
-                        style: const TextStyle(
-                          color: Color(0xFF597445),
-                          fontWeight: FontWeight.bold,
+                      const Text(
+                        'Sudah punya akun?',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black54,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          nav.to(Routes.registerPage);
+                        },
+                        child: const Text(
+                          "Masuk",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Color(0xFF597445), // Warna hijau sesuai desain
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -109,8 +131,8 @@ class RegisterPageView extends StatelessWidget {
   }
 
   // Fungsi untuk membuat TextField dengan dekorasi
-  Widget _buildTextField({
-    required String hintText,
+  static Widget _buildTextField({
+    required String labelText,
     required IconData icon,
     bool obscureText = false,
   }) {
@@ -118,9 +140,12 @@ class RegisterPageView extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         prefixIcon: Icon(icon, color: Colors.black54),
-        hintText: hintText,
+        labelText: labelText,
+        labelStyle: const TextStyle(
+          color: Colors.grey, // Warna teks placeholder abu-abu
+        ),
         filled: true,
-        fillColor: const Color(0xFFCDCDCD), // Abu-abu sesuai desain
+        fillColor: const Color(0xFFF0F0F0), // Warna latar TextField
         contentPadding: const EdgeInsets.symmetric(vertical: 18),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25),

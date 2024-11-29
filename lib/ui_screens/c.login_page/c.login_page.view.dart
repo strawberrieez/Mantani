@@ -6,7 +6,7 @@ class LoginPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE7F0DC),
+      backgroundColor: const Color(0xFFE7F0DC), // Warna latar sesuai desain
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
@@ -24,9 +24,9 @@ class LoginPageView extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
                 // Judul Halaman
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start, // Diubah ke start
-                  children: const [
+                  children: [
                     Text(
                       'Login',
                       style: TextStyle(
@@ -48,44 +48,46 @@ class LoginPageView extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
 
-                
+                // TextField untuk email
                 _buildTextField(
-                  hintText: 'Masukkan email',
+                  labelText: 'Masukkan email',
                   icon: Icons.email_outlined,
                 ),
                 const SizedBox(height: 20),
+                // TextField untuk password
                 _buildTextField(
-                  hintText: 'Masukkan password',
+                  labelText: 'Masukkan password',
                   icon: Icons.lock_outline,
                   obscureText: true,
                 ),
 
                 const SizedBox(height: 70),
-                // Tombol Daftar
+                // Tombol Login
                 SizedBox(
-                      width: double.infinity,
-                      height: 45,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          nav.to(Routes.loginPage);
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF597445),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        child: const Text(
-                          "Daftar",
-                          style: TextStyle(
-                            color: Color(0xFFE7F0DC),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
+                  width: double.infinity,
+                  height: 45,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Aksi tombol login
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF597445), // Warna hijau sesuai desain
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
+                    child: const Text(
+                      "Masuk",
+                      style: TextStyle(
+                        color: Color(0xFFE7F0DC),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 10),
+                // Sudah punya akun?
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center, // Menyelaraskan isi Row ke tengah
@@ -113,7 +115,7 @@ class LoginPageView extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -123,8 +125,8 @@ class LoginPageView extends StatelessWidget {
   }
 
   // Fungsi untuk membuat TextField dengan dekorasi
-  Widget _buildTextField({
-    required String hintText,
+  static Widget _buildTextField({
+    required String labelText,
     required IconData icon,
     bool obscureText = false,
   }) {
@@ -132,9 +134,12 @@ class LoginPageView extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         prefixIcon: Icon(icon, color: Colors.black54),
-        hintText: hintText,
+        labelText: labelText,
+        labelStyle: const TextStyle(
+          color: Colors.grey, // Warna teks placeholder abu-abu
+        ),
         filled: true,
-        fillColor: Colors.transparent, // Abu-abu sesuai desain
+        fillColor: const Color(0xFFF0F0F0), // Warna latar TextField
         contentPadding: const EdgeInsets.symmetric(vertical: 18),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25),
