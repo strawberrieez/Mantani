@@ -5,85 +5,89 @@ class GajiKaryawanListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Data dummy untuk daftar karyawan
+    final List<Map<String, dynamic>> karyawanList = [
+      {'nama': 'John Doe', 'gaji': 5000000},
+      {'nama': 'Jane Smith', 'gaji': 4500000},
+      {'nama': 'Robert Brown', 'gaji': 5200000},
+    ];
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFF4FCE3),
-        title: const Text(
-          'Gaji Karyawan',
-          style: TextStyle(color: Colors.black),
-        ),
-        centerTitle: true,
+        title: const Text('Daftar Gaji Karyawan'),
+        backgroundColor: const Color(0xFF597445),
       ),
-      body: const Text('text'),
-//       body: Padding(
-//         padding: const EdgeInsets.all(16.0),
-//         child: ListView(
-//           children: [
-//             _buildLahanCard('Lahan 1', [
-//               {'name': 'Ibu Munawaroh', 'date': '09 September 2024', 'salary': 'Rp. 300000'},
-//               {'name': 'Bapak Handoko', 'date': '06 Februari 2024', 'salary': 'Rp. 300000'},
-//             ]),
-//             const SizedBox(height: 16),
-//             _buildLahanCard('Lahan 2', [
-//               {'name': 'Ibu Munawaroh', 'date': '09 September 2024', 'salary': 'Rp. 300000'},
-//               {'name': 'Bapak Handoko', 'date': '06 Februari 2024', 'salary': 'Rp. 300000'},
-//               {'name': 'Bapak Handoko', 'date': '06 Februari 2024', 'salary': 'Rp. 300000'},
-//               {'name': 'Bapak Handoko', 'date': '06 Februari 2024', 'salary': 'Rp. 300000'},
-//             ]),
-//           ],
-//         ),
-//       ),
+      backgroundColor: const Color(0xFFE7F0DC), // Warna latar belakang
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: karyawanList.length,
+          itemBuilder: (context, index) {
+            final karyawan = karyawanList[index];
+            return Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: ListTile(
+                title: Text(
+                  karyawan['nama'],
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                ),
+                subtitle: Text(
+                  'Gaji: Rp. ${karyawan['gaji'].toString()}',
+                  style: const TextStyle(fontSize: 14, color: Colors.black),
+                ),
+                trailing: IconButton(
+                  icon: const Icon(Icons.edit, color: Color(0xFF597445)),
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        useSafeArea: true,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                        ),
+                        backgroundColor: const Color(0xFFE7F0DC), // Warna latar belakang modal
+                        builder: (_) {
+                          return FractionallySizedBox(
+                            heightFactor: 2.5, // Modal hanya menggunakan 50% dari tinggi layar
+                            child: GajiKaryawanDetailView(
+                              namaKaryawan: karyawan['nama'],
+                              gajiKaryawan: karyawan['gaji'],
+                            ),
+                          );
+                        },
+                      );
+                    }
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+     floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            useSafeArea: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+            ),
+            backgroundColor: const Color(0xFFE7F0DC), // Warna latar belakang modal
+            builder: (_) {
+              return FractionallySizedBox(
+                heightFactor: 0.5, // Modal hanya menggunakan 50% dari tinggi layar
+                child: const GajiKaryawanDetailView(),
+              );
+            },
+          );
+        },
+        backgroundColor: const Color(0xFF597445),
+        child: const Icon(Icons.add, color: Colors.white),
+      ),
     );
   }
-
-//   Widget _buildLahanCard(String title, List<Map<String, String>> data) {
-//     return Card(
-//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-//       elevation: 2,
-//       child: Padding(
-//         padding: const EdgeInsets.all(16.0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Text(
-//               title,
-//               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-//             ),
-//             const SizedBox(height: 8),
-//             ...data.map((item) {
-//               return Padding(
-//                 padding: const EdgeInsets.only(bottom: 8.0),
-//                 child: Row(
-//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                   children: [
-//                     Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(item['name']!, style: const TextStyle(fontSize: 14)),
-//                         Text(item['date']!, style: const TextStyle(fontSize: 12, color: Colors.grey)),
-//                       ],
-//                     ),
-//                     Text(item['salary']!, style: const TextStyle(fontSize: 14, color: Colors.red)),
-//                   ],
-//                 ),
-//               );
-//             }).toList(),
-//             const SizedBox(height: 8),
-//             ElevatedButton(
-//               onPressed: () {},
-//               style: ElevatedButton.styleFrom(
-//                 backgroundColor: Colors.grey[200],
-//                 foregroundColor: Colors.black,
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(8),
-//                   side: const BorderSide(color: Colors.grey),
-//                 ),
-//               ),
-//               child: const Text('+ Tambahkan lainnya'),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
 }

@@ -12,7 +12,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(const Duration(seconds: 3), () {
+      Future.delayed(const Duration(seconds: 2), () {
         nav.to(
           Routes.landingPage1,
         );

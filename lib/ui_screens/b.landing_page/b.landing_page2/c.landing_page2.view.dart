@@ -66,7 +66,7 @@ class LandingPage2View extends StatelessWidget {
                           const SizedBox(
                             width: 280,
                             child: Text(
-                              'Pantau harga beli bibit dan penjualannya',
+                              'Pantau harga beli bibit berkualitas dan keuntungan penjualannya.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.black,

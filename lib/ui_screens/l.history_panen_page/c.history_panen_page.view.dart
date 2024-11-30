@@ -5,15 +5,14 @@ class HistoryPanenPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: const Color(0xFFF4FCE3),
       appBar: AppBar(
+        backgroundColor: const Color(0xFFF4FCE3),
         title: const Text(
           'History Panen',
           style: TextStyle(color: Colors.black),
         ),
-        
         centerTitle: true,
       ),
       body: const Text('text'),

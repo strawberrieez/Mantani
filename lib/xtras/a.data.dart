@@ -6,7 +6,6 @@ abstract class Data {
   static Injected<SampleTigaData> get sampleTiga => _sampleTigaData;
   static Injected<LoginPageData> get loginPage => _loginPageData;
   static Injected<RegisterPageData> get registerPage => _registerPageData;
-  static Injected<HomePageData> get homePage => _homePageData;
   static Injected<EditProfilePageData> get editProfilePage => _editProfilePageData;
   static Injected<BantuanPageData> get bantuanPage => _bantuanPageData;
   static Injected<TentangPageData> get tentangPage => _tentangPageData;
@@ -20,6 +19,8 @@ abstract class Data {
   static Injected<GajiKaryawanListData> get gajiKaryawanList => _gajiKaryawanListData;
   static Injected<GajiKaryawanDetailData> get gajiKaryawanDetail => _gajiKaryawanDetailData;
   static Injected<DrawerData> get drawer => _drawerData;
+  static Injected<NavigatorData> get navigator => _navigatorData;
+  static Injected<HomePageData> get homePage => _homePageData;
 }
 
 final _sampleSatuData = RM1.inj(SampleSatuData(), Ctrl.sampleSatu.init);
@@ -28,7 +29,6 @@ final _sampleTigaData = RM1.inj(SampleTigaData(), Ctrl.sampleTiga.init);
 
 final _loginPageData = RM1.inj(LoginPageData(), Ctrl.loginPage.init);
 final _registerPageData = RM1.inj(RegisterPageData(), Ctrl.registerPage.init);
-final _homePageData = RM1.inj(HomePageData(), Ctrl.homePage.init);
 final _editProfilePageData = RM1.inj(EditProfilePageData(), Ctrl.editProfilePage.init);
 final _bantuanPageData = RM1.inj(BantuanPageData(), Ctrl.bantuanPage.init);
 final _tentangPageData = RM1.inj(TentangPageData(), Ctrl.tentangPage.init);
@@ -45,3 +45,6 @@ final _gajiKaryawanListData = RM1.inj(GajiKaryawanListData(), Ctrl.gajiKaryawanL
 final _gajiKaryawanDetailData = RM1.inj(GajiKaryawanDetailData(), Ctrl.gajiKaryawanDetail.init);
 
 final _drawerData = RM1.inj(DrawerData(), Ctrl.drawer.init);
+final _navigatorData = RM1.inj(NavigatorData(), Ctrl.navigator.init);
+
+final _homePageData = RM1.inj(HomePageData(), Ctrl.homePage.init);

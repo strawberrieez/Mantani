@@ -6,4 +6,6 @@ class KelolaPageListData {
   final rxCounter = 0.inj();
 
   final rxRandom = Prov.sample.st.rxRandom;
+
+  final rxKelolaList = _pv.rxKelolaList;
 }

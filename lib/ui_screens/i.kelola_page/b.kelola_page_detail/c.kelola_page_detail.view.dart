@@ -27,14 +27,13 @@ class KelolaPageDetailView extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: const Color(0xFFE7F0DC),
         appBar: AppBar(
-          backgroundColor: Colors.lightGreen.shade200,
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {},
+          backgroundColor: const Color(0xFFE7F0DC),
+          title: const Text(
+            'Lahan 1',
+            style: TextStyle(color: Colors.black),
           ),
-          title: const Text('Lahan 1', style: TextStyle(color: Colors.black)),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -42,6 +41,209 @@ class KelolaPageDetailView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              OnFormBuilder(
+                listenTo: _dt.rxForm,
+                builder: () => Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxnamaLahan.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxnamaLahan.error,
+                              labelText: 'Nama Lahan',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxlokasiLahan.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxlokasiLahan.error,
+                              labelText: 'Lokasi Lahan',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxnamaBenih.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxnamaBenih.error,
+                              labelText: 'Nama Benih',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxwaktuPanen.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxwaktuPanen.error,
+                              labelText: 'Waktu Panen',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxtanggalTanam.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxtanggalTanam.error,
+                              labelText: 'Tanggal Tanam',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxhargaBeliBenih.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxhargaBeliBenih.error,
+                              labelText: 'Harga Beli Benih',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxmerkBenih.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxmerkBenih.error,
+                              labelText: 'Merk Benih',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxhargaBeliPupuk.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxhargaBeliPupuk.error,
+                              labelText: 'Harga Beli Pupuk',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxnamaPupuk.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxnamaPupuk.error,
+                              labelText: 'Nama Pupuk',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxminimalHargaJual.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxminimalHargaJual.error,
+                              labelText: 'Minimal Harga Jual/kg',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxhargaJual.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxhargaJual.error,
+                              labelText: 'Harga Jual/kg',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      OnFormBuilder(
+                        listenTo: _dt.rxForm,
+                        builder: () => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: TextField(
+                            controller: _dt.rxhargaJual.controller,
+                            decoration: InputDecoration(
+                              errorText: _dt.rxhargaJual.error,
+                              labelText: 'Tanggal Panen',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
               // Area banner dengan PageView
               ValueListenableBuilder<List<String?>>(
                 valueListenable: imagesNotifier,
@@ -59,8 +261,7 @@ class KelolaPageDetailView extends StatelessWidget {
                               return GestureDetector(
                                 onTap: () async {
                                   imagesNotifier.value = [
-                                    ...imagesNotifier.value
-                                      ..[index] = 'assets/field_image${index + 1}.jpg'
+                                    ...imagesNotifier.value..[index] = 'assets/field_image${index + 1}.jpg'
                                   ];
                                 },
                                 child: Container(
@@ -111,34 +312,36 @@ class KelolaPageDetailView extends StatelessWidget {
               buildTextField('Nama Lahan', namaLahanController),
               buildTextField('Lokasi Lahan', lokasiLahanController),
               buildTextField('Nama Benih', namaBenihController),
-              buildTextField('Waktu Panen', waktuPanenController, hintText: 'contoh: 2 bulan'),
-              buildTextField('Tanggal Tanam', tanggalTanamController, hintText: 'contoh: 12 Oktober 2024'),
-              buildTextField('Harga Beli Benih', hargaBenihController, hintText: 'contoh: Rp. 60000'),
+              buildTextField('Waktu Panen', waktuPanenController),
+              buildTextField('Tanggal Tanam', tanggalTanamController),
+              buildTextField('Harga Beli Benih', hargaBenihController),
               buildTextField('Merk Benih', merkBenihController),
-              buildTextField('Harga Beli Pupuk', hargaPupukController, hintText: 'contoh: Rp. 265000'),
+              buildTextField('Harga Beli Pupuk', hargaPupukController),
               buildTextField('Nama Pupuk', namaPupukController),
-              buildTextField('Minimal Harga Jual/kg', minimalHargaController, hintText: 'contoh: Rp. 6000/kg'),
+              buildTextField('Minimal Harga Jual/kg', minimalHargaController),
               buildTextField('Harga Jual/kg', hargaJualController),
               buildTextField('Tanggal Panen', tanggalPanenController),
               const SizedBox(height: 20),
               // Tombol simpan
-              Center(
-                child: FractionallySizedBox(
-                  widthFactor: 0.8, // 80% dari lebar layar
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF597445),
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
+              SizedBox(
+                width: double.infinity,
+                height: 45,
+                child: ElevatedButton(
+                  onPressed: () {
+                    nav.to(Routes.loginPage);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF597445),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    onPressed: () {
-                      print('Data tersimpan: ${namaLahanController.text}');
-                    },
-                    child: const Text(
-                      'Simpan',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  child: const Text(
+                    "Simpan",
+                    style: TextStyle(
+                      color: Color(0xFFE7F0DC),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),

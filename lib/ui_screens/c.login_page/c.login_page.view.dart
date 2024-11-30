@@ -47,46 +47,92 @@ class LoginPageView extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 40),
-
-                // TextField untuk email
-                _buildTextField(
-                  labelText: 'Masukkan email',
-                  icon: Icons.email_outlined,
-                ),
-                const SizedBox(height: 20),
-                // TextField untuk password
-                _buildTextField(
-                  labelText: 'Masukkan password',
-                  icon: Icons.lock_outline,
-                  obscureText: true,
-                ),
-
-                const SizedBox(height: 70),
-                // Tombol Login
-                SizedBox(
-                  width: double.infinity,
-                  height: 45,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Aksi tombol login
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF597445), // Warna hijau sesuai desain
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: const Text(
-                      "Masuk",
-                      style: TextStyle(
-                        color: Color(0xFFE7F0DC),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ),
+                OnFormBuilder(
+                  listenTo: _dt.rxForm,
+                  builder: () => Center(
+                    child: SizedBox(
+                      width: 480,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          OnFormBuilder(
+                            listenTo: _dt.rxForm,
+                            builder: () => TextField(
+                              controller: _dt.rxEmail.controller,
+                              style: const TextStyle(color: Colors.black54),
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.mail, color: Colors.black54),
+                                labelText: 'Masukkan email',
+                                errorText: _dt.rxEmail.error,
+                                labelStyle: const TextStyle(
+                                  color: Colors.grey, // Warna teks placeholder abu-abu
+                                ),
+                                filled: true,
+                                fillColor: const Color(0xFFF0F0F0), // Warna latar TextField
+                                contentPadding: const EdgeInsets.symmetric(vertical: 18),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(25),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBoxH(15),
+                          OnFormBuilder(
+                            listenTo: _dt.rxForm,
+                            builder: () => TextField(
+                              controller: _dt.rxPassword.controller,
+                              style: const TextStyle(color: Colors.black54),
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Icons.password, color: Colors.black54),
+                                labelText: 'Masukkan password',
+                                errorText: _dt.rxPassword.error,
+                                labelStyle: const TextStyle(
+                                  color: Colors.grey, // Warna teks placeholder abu-abu
+                                ),
+                                filled: true,
+                                fillColor: const Color(0xFFF0F0F0), // Warna latar TextField
+                                contentPadding: const EdgeInsets.symmetric(vertical: 18),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(25),
+                                  borderSide: BorderSide.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBoxH(50),
+                          OnFormSubmissionBuilder(
+                            listenTo: _dt.rxForm,
+                            onSubmitting: () => const CircularProgressIndicator(),
+                            child: SizedBox(
+                              width: double.infinity,
+                              height: 45,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  _ct.submit();
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFF597445), // Warna hijau sesuai desain
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                child: const Text(
+                                  "Masuk",
+                                  style: TextStyle(
+                                    color: Color(0xFFE7F0DC),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          
                 const SizedBox(height: 10),
+                // Tombol Login
+                
                 // Sudah punya akun?
                 Center(
                   child: Row(
@@ -116,6 +162,42 @@ class LoginPageView extends StatelessWidget {
                     ],
                   ),
                 ),
+                const Divider(
+                  thickness: 1,
+                  color: Colors.black38,
+                ),
+                const SizedBox(height: 20),
+                SizedBox(
+                width: double.infinity,
+                height: 45,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    _ct.signInAnonimously();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: const BorderSide(color: Colors.black12),
+                    ),
+                  ),
+                  label: const Text(
+                    "Masuk sebagai tamu",
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                                ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                // TextField untuk email
+                
               ],
             ),
           ),
@@ -124,28 +206,4 @@ class LoginPageView extends StatelessWidget {
     );
   }
 
-  // Fungsi untuk membuat TextField dengan dekorasi
-  static Widget _buildTextField({
-    required String labelText,
-    required IconData icon,
-    bool obscureText = false,
-  }) {
-    return TextField(
-      obscureText: obscureText,
-      decoration: InputDecoration(
-        prefixIcon: Icon(icon, color: Colors.black54),
-        labelText: labelText,
-        labelStyle: const TextStyle(
-          color: Colors.grey, // Warna teks placeholder abu-abu
-        ),
-        filled: true,
-        fillColor: const Color(0xFFF0F0F0), // Warna latar TextField
-        contentPadding: const EdgeInsets.symmetric(vertical: 18),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
-          borderSide: BorderSide.none,
-        ),
-      ),
-    );
-  }
 }

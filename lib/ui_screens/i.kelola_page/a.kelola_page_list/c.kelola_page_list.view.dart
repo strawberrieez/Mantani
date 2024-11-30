@@ -1,87 +1,111 @@
 part of '_index.dart';
 
-class KelolaPageListView extends StatelessWidget {
+class KelolaPageListView extends StatefulWidget {
   const KelolaPageListView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ManTani',
-      theme: ThemeData(
-        primaryColor: Colors.green,
-        scaffoldBackgroundColor: const Color(0xFFEFF4E7),
-      ),
-      home: KelolaPage(),
-    );
-  }
+  _KelolaPageListViewState createState() => _KelolaPageListViewState();
 }
 
-class KelolaPage extends StatelessWidget {
-  final List<Map<String, String>> lahanList = [
-    {"title": "Lahan 1", "subtitle": "Sebelah tower"},
-    {"title": "Lahan 2", "subtitle": "Dekat warung Bu Sari"},
-    {"title": "Lahan 3", "subtitle": "Belakang rumah"},
-    {"title": "Lahan 4", "subtitle": "Dekat sungai sekolah"},
-    {"title": "Lahan 5", "subtitle": "Sebelah rumah"},
-  ];
+class _KelolaPageListViewState extends State<KelolaPageListView> {
+  int _currentIndex = 0;
+
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+
+    // Navigasi sesuai index
+    switch (index) {
+      case 0:
+        // Navigasi ke halaman kelola (halaman saat ini)
+        break;
+      case 1:
+        // Navigasi ke halaman penghasilan
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ManTani'),
-        backgroundColor: Color(0xFF597445),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: ListView.builder(
-        itemCount: lahanList.length,
-        itemBuilder: (context, index) {
-          final lahan = lahanList[index];
-          return Card(
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            color: Colors.grey[200],
-            child: ListTile(
-              leading: const Icon(Icons.location_on, color: Colors.black),
-              title: Text(lahan['title'] ?? '', style: const TextStyle(fontWeight: FontWeight.bold)),
-              subtitle: Text(lahan['subtitle'] ?? ''),
-              trailing: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                ),
-                child: const Text('Selengkapnya'),
+      backgroundColor: const Color(0xFFE7F0DC),
+      body:  Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                _ct.createDoc();
+              },
+              child: Text(
+                "Elevated Button",
               ),
             ),
-          );
-        },
+            
+          ],
+          
+        ),
+        
       ),
+
+      // body: Container(
+      //   color: const Color.fromRGBO(231, 240, 220, 1),
+      //   child: ListView(
+      //     padding: const EdgeInsets.all(16.0),
+      //     children: List.generate(5, (index) {
+      //       return Card(
+      //         color: Colors.grey[300],
+      //         margin: const EdgeInsets.only(bottom: 16),
+      //         child: ListTile(
+      //           leading: const Icon(
+      //             Icons.location_on,
+      //             color: Colors.black,
+      //           ),
+      //           title: Text(
+      //             'Lahan ${index + 1}',
+      //             style: const TextStyle(
+      //               color: Colors.black, // Warna teks hitam
+      //               fontWeight: FontWeight.bold,
+      //             ),
+      //           ),
+      //           subtitle: Text(
+      //             _getLahanSubtitle(index),
+      //             style: const TextStyle(color: Colors.black54),
+      //           ),
+      //           trailing: TextButton(
+      //             onPressed: () {
+      //               // Tambahkan aksi untuk tombol "Selengkapnya"
+      //             },
+      //             style: TextButton.styleFrom(
+      //               foregroundColor: Colors.green, // Warna teks hijau
+      //             ),
+      //             child: const Text('Selengkapnya'),
+      //           ),
+      //         ),
+      //       );
+      //     }),
+      //   ),
+      // ),
+      
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.green,
+        onPressed: () {
+          nav.to(Routes.kelolaPageDetail);
+        },
+        backgroundColor: const Color(0xFF597445),
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'Kelola',
-          ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'Penghasilan',
-          ),
-        ],
-        currentIndex: 0,
-        selectedItemColor: Colors.green,
-        onTap: (index) {},
-      ),
     );
+  }
+
+  // Fungsi untuk mendapatkan teks subtitle berdasarkan indeks lahan
+  String _getLahanSubtitle(int index) {
+    const subtitles = [
+      'Sebelah tower',
+      'Dekat warung Bu Sari',
+      'Belakang rumah',
+      'Dekat sungai sekolah',
+      'Sebelah rumah',
+    ];
+    return subtitles[index];
   }
 }

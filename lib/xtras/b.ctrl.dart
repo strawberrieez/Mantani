@@ -6,7 +6,6 @@ abstract class Ctrl {
   static SampleTigaCtrl get sampleTiga => SampleTigaCtrl();
   static LoginPageCtrl get loginPage => LoginPageCtrl();
   static RegisterPageCtrl get registerPage => RegisterPageCtrl();
-  static HomePageCtrl get homePage => HomePageCtrl();
   static EditProfilePageCtrl get editProfilePage => EditProfilePageCtrl();
   static BantuanPageCtrl get bantuanPage => BantuanPageCtrl();
   static TentangPageCtrl get tentangPage => TentangPageCtrl();
@@ -20,4 +19,6 @@ abstract class Ctrl {
   static GajiKaryawanListCtrl get gajiKaryawanList => GajiKaryawanListCtrl();
   static GajiKaryawanDetailCtrl get gajiKaryawanDetail => GajiKaryawanDetailCtrl();
   static DrawerCtrl get drawer => DrawerCtrl();
+  static NavigatorCtrl get navigator => NavigatorCtrl();
+  static HomePageCtrl get homePage => HomePageCtrl();
 }

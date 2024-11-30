@@ -10,7 +10,6 @@ class RouteMap {
     Routes.splashScreen: (RouteData data) => const SplashScreenView(),
     Routes.loginPage: (RouteData data) => const LoginPageView(),
     Routes.registerPage: (RouteData data) => const RegisterPageView(),
-    Routes.homePage: (RouteData data) => const HomePageView(),
     Routes.editProfilePage: (RouteData data) => const EditProfilePageView(),
     Routes.bantuanPage: (RouteData data) => const BantuanPageView(),
     Routes.tentangPage: (RouteData data) => const TentangPageView(),
@@ -24,5 +23,7 @@ class RouteMap {
     Routes.gajiKaryawanList: (RouteData data) => const GajiKaryawanListView(),
     Routes.gajiKaryawanDetail: (RouteData data) => const GajiKaryawanDetailView(),
     Routes.drawer: (RouteData data) => const DrawerView(),
+    Routes.navigator: (RouteData data) => const NavigatorView(),
+    Routes.homePage: (RouteData data) => const HomePageView(),
   };
 }

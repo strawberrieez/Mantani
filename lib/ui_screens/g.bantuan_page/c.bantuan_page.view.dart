@@ -5,204 +5,83 @@ class BantuanPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 393,
-          height: 852,
-          padding: const EdgeInsets.only(top: 49, bottom: 54),
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Color(0xFFE7F0DC)),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      width: 333,
-                      child: Text(
-                        'Bantuan',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 22),
-              Container(
-                width: double.infinity,
-                height: 705,
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                decoration: ShapeDecoration(
-                  color: Color(0xFFE7F0DC),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  shadows: [
-                    BoxShadow(
-                      color: Color(0x19000000),
-                      blurRadius: 4,
-                      offset: Offset(0, 0),
-                      spreadRadius: 0,
-                    )
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: 82,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              'Apa itu Mantani',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w700,
-                                height: 0,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              'ManTani adalah aplikasi manajemen pertanian yang dirancang untuk membantu petani mengelola lahan, mencatat hasil panen, memantau cuaca, serta mengelola jadwal tanam dan perawatan tanaman secara efisien.',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 10,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Container(
-                      width: double.infinity,
-                      height: 82,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              'Hubungi Kami',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w700,
-                                height: 0,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: 'Jika Anda mengalami masalah atau memiliki pertanyaan lebih lanjut, silakan hubungi tim kami melalui:\n',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 10,
-                                      fontFamily: 'Nunito',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: 'email: 237006054@student.unsil.ac.id\nTelepon/Whatsapp: 0859-5970-5944',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 10,
-                                      fontFamily: 'Nunito',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Container(
-                      width: double.infinity,
-                      height: 96,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              'Tips Penggunaan',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w700,
-                                height: 0,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              'Pastikan data yang Anda masukkan akurat untuk mendapatkan hasil yang akurat.\nPerbarui aplikasi secara berkala untuk mendapatkan fitur terbaru.\nGunakan fitur pencatatan hasil panen untuk melacak performa lahan Anda dari waktu ke waktu.',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 10,
-                                fontFamily: 'Nunito',
-                                fontWeight: FontWeight.w400,
-                                height: 0,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Bantuan',
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: const Color(0xFFE7F0DC),
+      ),
+      backgroundColor: const Color(0xFFE7F0DC),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25), 
+        child: Container(
+          constraints: const BoxConstraints.expand(), 
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          decoration: BoxDecoration(
+            color: const Color(0xFFE7F0DC),
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x19000000),
+                blurRadius: 4,
+                offset: Offset(0, 0),
               ),
             ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildSection(
+                title: 'Apa itu Mantani',
+                content:
+                    'ManTani adalah aplikasi manajemen pertanian yang dirancang untuk membantu petani mengelola lahan, mencatat hasil panen, memantau cuaca, serta mengelola jadwal tanam dan perawatan tanaman secara efisien.',
+              ),
+              const SizedBox(height: 20),
+              _buildSection(
+                title: 'Hubungi Kami',
+                content:
+                    'Jika Anda mengalami masalah atau memiliki pertanyaan lebih lanjut, silakan hubungi tim kami melalui:\n\n'
+                          'Email: 237006054@student.unsil.ac.id\nTelepon/Whatsapp: 0859-5970-5944',
+              ),
+              const SizedBox(height: 20),
+              _buildSection(
+                title: 'Tips Penggunaan',
+                content:
+                    '1. Pastikan data yang Anda masukkan akurat untuk mendapatkan hasil yang akurat.\n'
+                          '2. Perbarui aplikasi secara berkala untuk mendapatkan fitur terbaru.\n'
+                          '3. Gunakan fitur pencatatan hasil panen untuk melacak performa lahan Anda dari waktu ke waktu.',
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSection({required String title, required String content}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+            fontFamily: 'Nunito',
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        const SizedBox(height: 10),
+        Text(
+          content,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 12,
+            fontFamily: 'Nunito',
+            fontWeight: FontWeight.w400,
           ),
         ),
       ],

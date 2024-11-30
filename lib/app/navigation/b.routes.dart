@@ -24,4 +24,5 @@ class Routes {
   static const gajiKaryawanList = '/gaji_karyawan_list';
   static const gajiKaryawanDetail = '/gaji_karyawan_detail';
   static const drawer = '/drawer';
+  static const navigator = '/navigator';
 }

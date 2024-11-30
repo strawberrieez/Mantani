@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:mantani/dt_domains/_models/_index.dart';
+import 'package:mantani/dt_domains/b.crud/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
@@ -18,3 +20,5 @@ part 'widgets/e.kelola_page_detail.echo.dart';
 KelolaPageDetailData get _dt => Data.kelolaPageDetail.st;
 KelolaPageDetailCtrl get _ct => Ctrl.kelolaPageDetail;
 
+CrudProv get _pv => Prov.crud.st;
+CrudServ get _sv => Serv.crud;

@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:mantani/dt_domains/a.auth/_index.dart';
+import 'package:mantani/ui_widgets/spaces/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../app/_index.dart';
@@ -18,3 +20,5 @@ part 'widgets/e.register_page.echo.dart';
 RegisterPageData get _dt => Data.registerPage.st;
 RegisterPageCtrl get _ct => Ctrl.registerPage;
 
+AuthProv get _pv => Prov.auth.st;
+AuthServ get _sv => Serv.auth;
