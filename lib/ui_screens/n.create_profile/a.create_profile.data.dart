@@ -1,7 +1,7 @@
 part of '_index.dart';
 
-class NavigatorData {
-  final rxTitle = 'Navigator'.inj();
+class CreateProfileData {
+  final rxTitle = 'Create Profile'.inj();
 
   final rxCounter = 0.inj();
 

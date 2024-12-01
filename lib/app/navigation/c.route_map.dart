@@ -22,8 +22,9 @@ class RouteMap {
     Routes.penghasilanPage: (RouteData data) => const PenghasilanPageView(),
     Routes.gajiKaryawanList: (RouteData data) => const GajiKaryawanListView(),
     Routes.gajiKaryawanDetail: (RouteData data) => const GajiKaryawanDetailView(),
-    Routes.drawer: (RouteData data) => const DrawerView(),
-    Routes.navigator: (RouteData data) => const NavigatorView(),
+    Routes.drawer: (RouteData data) =>  DrawerView(),
     Routes.homePage: (RouteData data) => const HomePageView(),
+    Routes.kelolaSelengkapnya: (RouteData data,) =>  const KelolaSelengkapnyaView(),
+    Routes.createProfile: (RouteData data) => const CreateProfileView(),
   };
 }

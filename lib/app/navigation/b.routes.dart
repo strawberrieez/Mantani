@@ -25,4 +25,6 @@ class Routes {
   static const gajiKaryawanDetail = '/gaji_karyawan_detail';
   static const drawer = '/drawer';
   static const navigator = '/navigator';
+  static const kelolaSelengkapnya = '/kelola_selengkapnya';
+  static const createProfile = '/create_profile';
 }

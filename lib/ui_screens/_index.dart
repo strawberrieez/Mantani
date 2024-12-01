@@ -20,5 +20,6 @@ export 'j.penghasilan_page/_index.dart';
 export 'k.gaji_karyawan/a.gaji_karyawan_list/_index.dart';
 export 'k.gaji_karyawan/b.gaji_karyawan_detail/_index.dart';
 export 'm.drawer/_index.dart';
-export 'n.navigator/_index.dart';
 export 'e.home_page/_index.dart';
+export 'i.kelola_page/c.kelola_selengkapnya/_index.dart';
+export 'n.create_profile/_index.dart';

@@ -8,121 +8,192 @@ class GajiKaryawanDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController namaController = TextEditingController(text: namaKaryawan ?? '');
-    final TextEditingController gajiController =
-        TextEditingController(text: gajiKaryawan != null ? gajiKaryawan.toString() : '');
-    final TextEditingController tugasController = TextEditingController();
-    final TextEditingController tanggalBekerjaController = TextEditingController();
-    final TextEditingController lamaBekerjaController = TextEditingController();
-
     return Padding(
       padding: EdgeInsets.only(
         top: 16,
         left: 16,
         right: 16,
-        bottom: MediaQuery.of(context).viewInsets.bottom + 16, // Menghindari overlap dengan keyboard
+        bottom: MediaQuery.of(context).viewInsets.bottom + 16,
       ),
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Tampilkan data nama karyawan jika tersedia
-            if (namaKaryawan != null)
-              Text(
-                'Nama: $namaKaryawan',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-            const SizedBox(height: 8),
-            if (gajiKaryawan != null)
-              Text(
-                'Gaji: Rp. $gajiKaryawan',
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.black,
-                ),
-              ),
-            const SizedBox(height: 24),
-
-            const Text(
-              'Tambah Gaji Karyawan',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            const SizedBox(height: 16),
-
-            // Input Fields
-            _buildTextField('Nama Karyawan', namaController),
-            _buildTextField('Tugas', tugasController),
-            _buildTextField('Tanggal Bekerja', tanggalBekerjaController, keyboardType: TextInputType.datetime),
-            _buildTextField('Lama Bekerja', lamaBekerjaController),
-            _buildTextField('Gaji Karyawan', gajiController, keyboardType: TextInputType.number),
-            const SizedBox(height: 24),
-
-            // Tombol Simpan
-            SizedBox(
-              width: double.infinity,
-              height: 45,
-              child: ElevatedButton(
-                onPressed: () {
-                  // Logika untuk menyimpan data
-                  Navigator.pop(context); // Tutup modal
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Data berhasil disimpan!')),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF597445),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'Simpan',
+        child: OnFormBuilder(
+          listenTo: _dt.rxForm,
+          builder: () => Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Tambah Gaji Karyawan',
                   style: TextStyle(
-                    color: Color(0xFFE7F0DC),
                     fontSize: 16,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
                 ),
-              ),
+                const SizedBox(height: 16),
+                OnFormBuilder(
+                  listenTo: _dt.rxForm,
+                  builder: () => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: TextField(
+                      controller: _dt.rxnamaKaryawan.controller,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        labelText: 'Nama karyawan',
+                        errorText: _dt.rxnamaKaryawan.error,
+                        labelStyle: const TextStyle(color: Colors.grey),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                OnFormBuilder(
+                  listenTo: _dt.rxForm,
+                  builder: () => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: TextField(
+                      controller: _dt.rxtugasKaryawan.controller,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        labelText: 'Tugas karyawan',
+                        errorText: _dt.rxtugasKaryawan.error,
+                        labelStyle: const TextStyle(color: Colors.grey),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                OnFormBuilder(
+                  listenTo: _dt.rxForm,
+                  builder: () => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: TextField(
+                      controller: _dt.rxtanggalBekerja.controller,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        labelText: 'Tanggal bekerja',
+                        errorText: _dt.rxtanggalBekerja.error,
+                        labelStyle: const TextStyle(color: Colors.grey),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                OnFormBuilder(
+                  listenTo: _dt.rxForm,
+                  builder: () => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: TextField(
+                      controller: _dt.rxlamaBekerja.controller,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        labelText: 'Lama bekerja',
+                        errorText: _dt.rxlamaBekerja.error,
+                        labelStyle: const TextStyle(color: Colors.grey),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                OnFormBuilder(
+                  listenTo: _dt.rxForm,
+                  builder: () => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: TextField(
+                      controller: _dt.rxgajiKaryawan.controller,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        labelText: 'Gaji karyawan',
+                        errorText: _dt.rxgajiKaryawan.error,
+                        labelStyle: const TextStyle(color: Colors.grey),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[300]!),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                OnFormSubmissionBuilder(
+                  listenTo: _dt.rxForm,
+                  onSubmitting: () => const CircularProgressIndicator(),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 45,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _ct.submit();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Data berhasil disimpan!')),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF597445),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      child: const Text(
+                        'Simpan',
+                        style: TextStyle(
+                          color: Color(0xFFE7F0DC),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTextField(String label, TextEditingController controller,
-      {String? hintText, TextInputType keyboardType = TextInputType.text, int maxLines = 1}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: TextField(
-        controller: controller,
-        keyboardType: keyboardType,
-        maxLines: maxLines,
-        style: const TextStyle(color: Colors.black),
-        decoration: InputDecoration(
-          labelText: label,
-          hintText: hintText,
-          labelStyle: const TextStyle(color: Colors.grey),
-          hintStyle: const TextStyle(color: Colors.grey),
-          filled: true,
-          fillColor: Colors.white,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(color: Colors.grey[300]!),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(color: Colors.grey[300]!),
           ),
         ),
       ),

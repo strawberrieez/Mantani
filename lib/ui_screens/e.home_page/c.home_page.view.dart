@@ -32,7 +32,7 @@ class _HomePageViewState extends State<HomePageView> {
         backgroundColor: const Color(0xFF597445),
         foregroundColor: Colors.white, // Ikon juga berwarna putih
       ),
-      endDrawer: const DrawerView(),
+      endDrawer: DrawerView(),
       body: _pages[_currentIndex], // Menampilkan halaman sesuai indeks
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex, // Indeks navigasi saat ini

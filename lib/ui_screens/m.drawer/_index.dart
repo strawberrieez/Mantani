@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:mantani/dt_domains/a.auth/_index.dart';
+import 'package:mantani/dt_domains/b.crud/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../app/_index.dart';
@@ -18,3 +20,6 @@ part 'widgets/e.drawer.echo.dart';
 DrawerData get _dt => Data.drawer.st;
 DrawerCtrl get _ct => Ctrl.drawer;
 
+AuthServ get _sv => Serv.auth;
+
+CrudProv get _pvc => Prov.crud.st;

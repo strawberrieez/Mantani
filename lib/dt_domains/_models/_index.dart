@@ -1,3 +1,5 @@
 import 'dart:convert';
 
-part 'product.dart';
+part 'lahan.dart';
+part 'gaji.dart';
+part 'profile.dart';

@@ -19,6 +19,7 @@ abstract class Ctrl {
   static GajiKaryawanListCtrl get gajiKaryawanList => GajiKaryawanListCtrl();
   static GajiKaryawanDetailCtrl get gajiKaryawanDetail => GajiKaryawanDetailCtrl();
   static DrawerCtrl get drawer => DrawerCtrl();
-  static NavigatorCtrl get navigator => NavigatorCtrl();
   static HomePageCtrl get homePage => HomePageCtrl();
+  static KelolaSelengkapnyaCtrl get kelolaSelengkapnya => KelolaSelengkapnyaCtrl();
+  static CreateProfileCtrl get createProfile => CreateProfileCtrl();
 }

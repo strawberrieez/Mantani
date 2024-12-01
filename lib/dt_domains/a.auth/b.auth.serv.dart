@@ -19,7 +19,7 @@ class AuthServ {
   responseAuthStates(User? user) async {
     if (nav.routeData.location == '/login_page' || nav.routeData.location == '/register_page') {
       if (user != null) {
-        nav.toReplacement(Routes.homePage);
+        nav.toReplacement(Routes.createProfile);
       }
     } else {
       if (user == null) {

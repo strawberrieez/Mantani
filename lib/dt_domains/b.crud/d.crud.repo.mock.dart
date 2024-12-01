@@ -7,14 +7,45 @@ class CrudRepoMock implements CrudRepo {
     logz.wtf('random value coming from CrudRepoMock');
     return x;
   }
-  
+
   @override
-  Future<void> createDoc(Product data) {
+  Future<void> createKelolaDoc(Lahan data) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<Lahan>> getKelolaColl() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> createGajiDoc(Gaji data) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<Gaji>> getGajiColl() {
     throw UnimplementedError();
   }
   
   @override
-  Future<List<Product>> getColl() {
+  Future<void> deleteGajiDoc(String id) {
     throw UnimplementedError();
   }
+  
+  @override
+  Future<void> createProfileDoc(Profile data) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<List<Profile>> getProfileColl() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<Lahan> getDoc() {
+    throw UnimplementedError();
+  }
+  
 }

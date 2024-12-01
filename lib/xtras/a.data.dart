@@ -19,8 +19,9 @@ abstract class Data {
   static Injected<GajiKaryawanListData> get gajiKaryawanList => _gajiKaryawanListData;
   static Injected<GajiKaryawanDetailData> get gajiKaryawanDetail => _gajiKaryawanDetailData;
   static Injected<DrawerData> get drawer => _drawerData;
-  static Injected<NavigatorData> get navigator => _navigatorData;
   static Injected<HomePageData> get homePage => _homePageData;
+  static Injected<KelolaSelengkapnyaData> get kelolaSelengkapnya => _kelolaSelengkapnyaData;
+  static Injected<CreateProfileData> get createProfile => _createProfileData;
 }
 
 final _sampleSatuData = RM1.inj(SampleSatuData(), Ctrl.sampleSatu.init);
@@ -45,6 +46,9 @@ final _gajiKaryawanListData = RM1.inj(GajiKaryawanListData(), Ctrl.gajiKaryawanL
 final _gajiKaryawanDetailData = RM1.inj(GajiKaryawanDetailData(), Ctrl.gajiKaryawanDetail.init);
 
 final _drawerData = RM1.inj(DrawerData(), Ctrl.drawer.init);
-final _navigatorData = RM1.inj(NavigatorData(), Ctrl.navigator.init);
 
 final _homePageData = RM1.inj(HomePageData(), Ctrl.homePage.init);
+
+final _kelolaSelengkapnyaData = RM1.inj(KelolaSelengkapnyaData(), Ctrl.kelolaSelengkapnya.init);
+
+final _createProfileData = RM1.inj(CreateProfileData(), Ctrl.createProfile.init);

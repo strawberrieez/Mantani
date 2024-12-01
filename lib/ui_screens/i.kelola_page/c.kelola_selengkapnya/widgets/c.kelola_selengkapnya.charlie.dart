@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class NavigatorCharlie extends StatelessWidget {
-  const NavigatorCharlie({super.key});
+class KelolaSelengkapnyaCharlie extends StatelessWidget {
+  const KelolaSelengkapnyaCharlie({super.key});
 
   @override
   Widget build(BuildContext context) {

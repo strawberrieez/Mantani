@@ -2,8 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:mantani/dt_domains/_index.dart';
-import 'package:mantani/dt_domains/a.auth/_index.dart';
-import 'package:mantani/dt_domains/b.crud/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
@@ -23,5 +21,3 @@ KelolaPageListCtrl get _ct => Ctrl.kelolaPageList;
 
 CrudProv get _pv => Prov.crud.st;
 CrudServ get _sv => Serv.crud;
-
-AuthServ get _svAuth => Serv.auth;

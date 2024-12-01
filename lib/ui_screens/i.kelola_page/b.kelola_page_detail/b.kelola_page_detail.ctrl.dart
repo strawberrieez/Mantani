@@ -6,10 +6,12 @@ class KelolaPageDetailCtrl {
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 
   updateRandom() => Serv.sample.updateRandom();
-  
+
+  submit() => _dt.rxForm.submit();
+
   createDoc() async {
     final id = UniqueKey().toString();
-    final data = Product(
+    final data = Lahan(
       id: id,
       createdAt: DateTime.now().toString(),
       // imageUrl: await _sv.getImageUrl(id),
@@ -18,14 +20,16 @@ class KelolaPageDetailCtrl {
       namaBenih: _dt.rxnamaBenih.value,
       waktuPanen: _dt.rxwaktuPanen.value,
       tanggalTanam: _dt.rxtanggalTanam.value,
-      hargaBeliBenih: _dt.rxhargaBeliBenih.value,
+      hargaBeliBenih: int.parse(_dt.rxhargaBeliBenih.value),
       merkBenih: _dt.rxmerkBenih.value,
-      hargaBeliPupuk: _dt.rxhargaBeliPupuk.value,
+      hargaBeliPupuk: int.parse(_dt.rxhargaBeliPupuk.value),
       namaPupuk: _dt.rxnamaPupuk.value,
-      minimalHargaJual: _dt.rxminimalHargaJual.value,
-      hargaJual: _dt.rxhargaJual.value,
+      minimalHargaJual: int.parse(_dt.rxminimalHargaJual.value),
+      hargaJual: int.parse(_dt.rxhargaJual.value),
       tanggalPanen: _dt.rxtanggalPanen.value,
+      totalPanen: int.parse(_dt.rxtotalPanen.value),
     );
-    _sv.createDoc(data);
+    _sv.createKelolaDoc(data);
   }
+
 }

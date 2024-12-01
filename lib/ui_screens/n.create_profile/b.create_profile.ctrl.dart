@@ -1,7 +1,7 @@
 part of '_index.dart';
 
-class NavigatorCtrl {
-  init() => logxx.i(NavigatorCtrl, '...');
+class CreateProfileCtrl {
+  init() => logxx.i(CreateProfileCtrl, '...');
 
   increaseCounter() => _dt.rxCounter.setState((s) => s + 1);
 

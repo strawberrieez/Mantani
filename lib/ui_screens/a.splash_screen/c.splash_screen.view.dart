@@ -1,9 +1,11 @@
+
 part of '_index.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SplashScreenViewState createState() => _SplashScreenViewState();
 }
 

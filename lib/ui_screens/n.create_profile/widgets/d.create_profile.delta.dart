@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class NavigatorEcho extends StatelessWidget {
-  const NavigatorEcho({super.key});
+class CreateProfileDelta extends StatelessWidget {
+  const CreateProfileDelta({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 part of '../_index.dart';
 
-class NavigatorFab extends StatelessWidget {
-  const NavigatorFab({super.key});
+class KelolaSelengkapnyaFab extends StatelessWidget {
+  const KelolaSelengkapnyaFab({super.key});
 
   @override
   Widget build(BuildContext context) {
