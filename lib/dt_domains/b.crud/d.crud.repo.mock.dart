@@ -48,4 +48,66 @@ class CrudRepoMock implements CrudRepo {
     throw UnimplementedError();
   }
   
+  // @override
+  // Future<num> calculateTotalPenghasilanBersih(String lahanId) {
+  //   throw UnimplementedError();
+  // }
+  
+  // @override
+  // Future<int> calculateTotalPenghasilanKotor(String lahanId) {
+  //   throw UnimplementedError();
+  // }
+  
+  @override
+  Future<int> fetchHargaBeliBenih(String lahanId) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<int> fetchHargaBeliPupuk(String lahanId) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<int> fetchHargaJual(String lahanId) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<num> fetchTotalGaji() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<int> fetchTotalPanen(String lahanId) {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<Profile> getProfileDoc() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<List<Map<String, dynamic>>> fetchAllLahanData() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<num> calculateTotalPenghasilanBersih() {
+    // TODO: implement calculateTotalPenghasilanBersih
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<int> calculateTotalPenghasilanKotor() {
+    // TODO: implement calculateTotalPenghasilanKotor
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<void> deleteKelolaDoc(String id) {
+    throw UnimplementedError();
+  }
+  
 }

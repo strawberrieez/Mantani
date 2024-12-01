@@ -7,41 +7,53 @@ class EditProfilePageData {
 
   final rxRandom = Prov.sample.st.rxRandom;
 
-  final rxProfileList = _pv.rxProfileList;
+  final rxProfileDetail = _pv.rxProfileDetail;
 
   final rxForm = RM.injectForm(
     autovalidateMode: AutovalidateMode.onUserInteraction,
     submit: () async {
-      await _ct.createDoc();
+      await _ct.updateDoc();
       nav.back();
     },
   );
 
-  final rxnamaPerusahaan = RM.injectTextEditing(
-    validators: [
-      Validate.isNotEmpty,
-      Validate.fullName,
-    ],
+  final rxnamaPerusahaan = RM.inject(
+    () => RM.injectTextEditing(
+      text: '${_dt.rxProfileDetail.st?.namaPerusahaan}',
+      validators: [
+        Validate.isNotEmpty,
+        Validate.description,
+      ],
+    ),
   );
 
-  final rxnamaPemilik = RM.injectTextEditing(
-    validators: [
-      Validate.isNotEmpty,
-      Validate.fullName,
-    ],
+  final rxnamaPemilik = RM.inject(
+    () => RM.injectTextEditing(
+      text: '${_dt.rxProfileDetail.st?.namaPemilik}',
+      validators: [
+        Validate.isNotEmpty,
+        Validate.description,
+      ],
+    ),
   );
 
-  final rxnotlp = RM.injectTextEditing(
-    validators: [
-      Validate.isNotEmpty,
-      Validate.fullName,
-    ],
+  final rxnoTlp = RM.inject(
+    () => RM.injectTextEditing(
+      text: '${_dt.rxProfileDetail.st?.noTlp}',
+      validators: [
+        Validate.isNotEmpty,
+        Validate.description,
+      ],
+    ),
   );
 
-  final rxalamat = RM.injectTextEditing(
-    validators: [
-      Validate.isNotEmpty,
-      Validate.fullName,
-    ],
+  final rxalamat = RM.inject(
+    () => RM.injectTextEditing(
+      text: '${_dt.rxProfileDetail.st?.alamat}',
+      validators: [
+        Validate.isNotEmpty,
+        Validate.description,
+      ],
+    ),
   );
 }

@@ -70,7 +70,7 @@ class EditProfilePageView extends StatelessWidget {
                       builder: () => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: TextField(
-                          controller: _dt.rxnamaPerusahaan.controller,
+                          controller: _dt.rxnamaPerusahaan.st.controller,
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                             labelText: 'Nama perusahaan',
@@ -97,7 +97,7 @@ class EditProfilePageView extends StatelessWidget {
                       builder: () => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: TextField(
-                          controller: _dt.rxnamaPemilik.controller,
+                          controller: _dt.rxnamaPemilik.st.controller,
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                             labelText: 'Nama pemilik',
@@ -124,11 +124,11 @@ class EditProfilePageView extends StatelessWidget {
                       builder: () => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: TextField(
-                          controller: _dt.rxnotlp.controller,
+                          controller: _dt.rxnoTlp.st.controller,
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                             labelText: 'No tlp',
-                            errorText: _dt.rxnotlp.error,
+                            errorText: _dt.rxnoTlp.error,
                             labelStyle: const TextStyle(color: Colors.grey),
                             hintStyle: const TextStyle(color: Colors.grey),
                             filled: true,
@@ -151,7 +151,7 @@ class EditProfilePageView extends StatelessWidget {
                       builder: () => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: TextField(
-                          controller: _dt.rxalamat.controller,
+                          controller: _dt.rxalamat.st.controller,
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                             labelText: 'Alamat',
@@ -185,8 +185,8 @@ class EditProfilePageView extends StatelessWidget {
                 width: double.infinity,
                 height: 45,
                 child: ElevatedButton(
-                  onPressed: () {
-                    _ct.submit();
+                  onPressed: () async {
+                    await _ct.submit();
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF597445),

@@ -44,4 +44,10 @@ class CrudProv {
     ),
   );
   
+  final rxProfileDetail = RM.injectFuture<Profile?>(
+    () => Future.value(null),
+    sideEffects: SideEffects(
+      initState: () => _sv.readDoc(),
+    ),
+  );
 }

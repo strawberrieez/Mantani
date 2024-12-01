@@ -3,7 +3,6 @@ part of '_index.dart';
 class Lahan {
   final String id;
   final String createdAt;
-  final String imageUrl;
   final String namaLahan;
   final String lokasiLahan;
   final String namaBenih;
@@ -20,7 +19,6 @@ class Lahan {
   Lahan({
     this.id = '',
     this.createdAt = '',
-    this.imageUrl = '',
     this.namaLahan = '',
     this.lokasiLahan = '',
     this.namaBenih = '',
@@ -39,7 +37,6 @@ class Lahan {
   Lahan copyWith({
     String? id,
     String? createdAt,
-    String? imageUrl,
     String? namaLahan,
     String? lokasiLahan,
     String? namaBenih,
@@ -57,7 +54,6 @@ class Lahan {
     return Lahan(
       id: id ?? this.id,
       createdAt: createdAt ?? this.createdAt,
-      imageUrl: imageUrl ?? this.imageUrl,
       namaLahan: namaLahan ?? this.namaLahan,
       lokasiLahan: lokasiLahan ?? this.lokasiLahan,
       namaBenih: namaBenih ?? this.namaBenih,
@@ -79,7 +75,6 @@ class Lahan {
   
     result.addAll({'id': id});
     result.addAll({'created_at': createdAt});
-    result.addAll({'image_url': imageUrl});
     result.addAll({'nama_lahan': namaLahan});
     result.addAll({'lokasi_lahan': lokasiLahan});
     result.addAll({'nama_benih': namaBenih});
@@ -101,7 +96,6 @@ class Lahan {
     return Lahan(
       id: map['id'] ?? '',
       createdAt: map['created_at'] ?? '',
-      imageUrl: map['image_url'] ?? '',
       namaLahan: map['nama_lahan'] ?? '',
       lokasiLahan: map['lokasi_lahan'] ?? '',
       namaBenih: map['nama_benih'] ?? '',
@@ -124,7 +118,7 @@ class Lahan {
 
   @override
   String toString() {
-    return 'Lahan(id: $id, createdAt: $createdAt, imageUrl: $imageUrl, namaLahan: $namaLahan, lokasiLahan: $lokasiLahan, namaBenih: $namaBenih, waktuPanen: $waktuPanen, tanggalTanam: $tanggalTanam, hargaBeliBenih: $hargaBeliBenih, merkBenih: $merkBenih, hargaBeliPupuk: $hargaBeliPupuk, namaPupuk: $namaPupuk, minimalHargaJual: $minimalHargaJual, hargaJual: $hargaJual, tanggalPanen: $tanggalPanen, totalPanen: $totalPanen)';
+    return 'Lahan(id: $id, createdAt: $createdAt, namaLahan: $namaLahan, lokasiLahan: $lokasiLahan, namaBenih: $namaBenih, waktuPanen: $waktuPanen, tanggalTanam: $tanggalTanam, hargaBeliBenih: $hargaBeliBenih, merkBenih: $merkBenih, hargaBeliPupuk: $hargaBeliPupuk, namaPupuk: $namaPupuk, minimalHargaJual: $minimalHargaJual, hargaJual: $hargaJual, tanggalPanen: $tanggalPanen, totalPanen: $totalPanen)';
   }
 
   @override
@@ -134,7 +128,6 @@ class Lahan {
     return other is Lahan &&
       other.id == id &&
       other.createdAt == createdAt &&
-      other.imageUrl == imageUrl &&
       other.namaLahan == namaLahan &&
       other.lokasiLahan == lokasiLahan &&
       other.namaBenih == namaBenih &&
@@ -154,7 +147,6 @@ class Lahan {
   int get hashCode {
     return id.hashCode ^
       createdAt.hashCode ^
-      imageUrl.hashCode ^
       namaLahan.hashCode ^
       lokasiLahan.hashCode ^
       namaBenih.hashCode ^

@@ -9,16 +9,15 @@ class EditProfilePageCtrl {
 
   submit() => _dt.rxForm.submit();
 
-  createDoc() async {
-    final id = UniqueKey().toString();
+  updateDoc() async {
     final data = Profile(
-      id: id,
-      createdAt: DateTime.now().toString(),
-      namaPemilik: _dt.rxnamaPemilik.value,
-      namaPerusahaan: _dt.rxnamaPerusahaan.value,
-      noTlp: _dt.rxnotlp.value,
-      alamat: _dt.rxalamat.value,
+      id: _dt.rxProfileDetail.st!.id,
+      createdAt: _dt.rxProfileDetail.st!.createdAt,
+      namaPerusahaan: _dt.rxnamaPerusahaan.st.value,
+      namaPemilik: _dt.rxnamaPemilik.st.value,
+      noTlp: _dt.rxnoTlp.st.value,
+      alamat: _dt.rxalamat.st.value,
     );
-    _sv.createProfileDoc(data);
+    _sv.updateDoc(data);
   }
 }

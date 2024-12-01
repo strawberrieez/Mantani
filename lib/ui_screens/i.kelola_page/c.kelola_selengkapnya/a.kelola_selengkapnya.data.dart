@@ -8,4 +8,9 @@ class KelolaSelengkapnyaData {
   final rxRandom = Prov.sample.st.rxRandom;
 
   final rxKelolaDetail = _pv.rxKelolaDetail;
+
+  final rxKelolaList = _pv.rxKelolaList;
+  
+
+  
 }

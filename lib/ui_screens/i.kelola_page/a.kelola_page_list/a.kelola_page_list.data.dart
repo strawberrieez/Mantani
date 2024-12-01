@@ -8,4 +8,8 @@ class KelolaPageListData {
   final rxRandom = Prov.sample.st.rxRandom;
 
   final rxKelolaList = _pv.rxKelolaList;
+
+  final rxSelectedId = _pv.rxSelectedId;
+
+  
 }

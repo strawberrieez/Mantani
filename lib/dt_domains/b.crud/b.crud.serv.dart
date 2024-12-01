@@ -32,9 +32,15 @@ class CrudServ {
     return _rp.createProfileDoc(data);
   }
 
+
   deleteDoc(String id) {
     _pv.rxGajiList.st = [..._pv.rxGajiList.st]..removeWhere((element) => element.id == id);
     return _rp.deleteGajiDoc(id);
+  }
+
+  deleteKelolaDoc(String id) {
+    _pv.rxKelolaList.st = [..._pv.rxKelolaList.st]..removeWhere((element) => element.id == id);
+    return _rp.deleteKelolaDoc(id);
   }
 
   Future<String> getImageUrl(String id) async {
@@ -52,7 +58,16 @@ class CrudServ {
   
   
   readDoc() => _pv.rxKelolaDetail.stateAsync = _rp.getDoc();
+  readProfileDoc() => _pv.rxProfileDetail.stateAsync = _rp.getProfileDoc();
 
-  
+  updateDoc(Profile data) {
+    _rp.createProfileDoc(data);
+    _pv.rxProfileList.setState(
+      (s) {
+        final index = _pv.rxProfileList.st.indexWhere((element) => element.id == data.id);
+        return s[index] = data;
+      },
+    );
+  }
 }
 

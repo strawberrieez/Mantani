@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mantani/dt_domains/_index.dart';
 import 'package:mantani/dt_domains/b.crud/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../app/_index.dart';
 import '../../../xtras/_index.dart';
@@ -21,3 +22,4 @@ KelolaSelengkapnyaData get _dt => Data.kelolaSelengkapnya.st;
 KelolaSelengkapnyaCtrl get _ct => Ctrl.kelolaSelengkapnya;
 
 CrudProv get _pv => Prov.crud.st;
+CrudServ get _sv => Serv.crud;

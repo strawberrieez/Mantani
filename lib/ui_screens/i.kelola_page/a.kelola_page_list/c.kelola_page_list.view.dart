@@ -20,11 +20,13 @@ class KelolaPageListViewState extends State<KelolaPageListView> {
           onError: (error, refreshError) => const Text('Error'),
           onData: (data) => OnReactive(
             () => ListView.builder(
+              
               itemCount: data.length,
               itemBuilder: (context, index) {
                 return Card(
                   color: Colors.white,
                   child: ListTile(
+                    selected: _dt.rxSelectedId.st == data[index].id,
                     tileColor: Colors.white,
                     leading: const Icon(
                       Icons.location_on,
@@ -44,24 +46,8 @@ class KelolaPageListViewState extends State<KelolaPageListView> {
                     ),
                     trailing: TextButton(
                       onPressed: () {
-                        nav.to(
-                          Routes.kelolaSelengkapnya,
-                          arguments: {
-                            'namaLahan': data[index].namaLahan,
-                            'lokasiLahan': data[index].lokasiLahan,
-                            'namaBenih': data[index].namaBenih,
-                            'waktuPanen': data[index].waktuPanen,
-                            'tanggalTanam': data[index].tanggalTanam,
-                            'hargaBeliBenih': data[index].hargaBeliBenih,
-                            'merkBenih': data[index].merkBenih,
-                            'hargaBeliPupuk': data[index].hargaBeliPupuk,
-                            'namaPupuk': data[index].namaPupuk,
-                            'minimalHargaJual': data[index].minimalHargaJual,
-                            'hargaJual': data[index].hargaJual,
-                            'tanggalPanen': data[index].tanggalPanen,
-                            'totalPanen': data[index].totalPanen,
-                          },
-                        );
+                        _ct.selectedId(data[index].id);
+                          nav.to(Routes.kelolaSelengkapnya);
                       },
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.green,

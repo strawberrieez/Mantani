@@ -9,4 +9,7 @@ class KelolaPageListCtrl {
 
   readColl() => _sv.readKelolaColl();
 
+  selectedId(String id) => _sv.selectedId(id);
+
+  deleteDoc(String id) => _sv.deleteDoc(id);
 }
